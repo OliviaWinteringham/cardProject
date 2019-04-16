@@ -1,38 +1,50 @@
-import React from 'react'
+import React from "react";
+import css from "../Cards/cards.module.css";
 
-class Input extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            value: ''
-        }
-this.handleChange=this.handleChange.bind(this)
-    }
+class Cards extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: " "
+    };
+  }
 
-    handleChange(event){
-        console.log(event)
-    const value = event.target.value;
-        this.setState=(state => {
-            return {value: value}
-    })  
+  addingInfoHandler = eventOfTyping => {
+    const { value } = eventOfTyping.target;
+    console.log(value);
+    this.setState((state, props) => ({
+      value: value
+    }));
+  };
 
-}
-render(){
-    return(
-        <div>
-            <form>
-                <h1>Found a card? add the information here</h1>  
-        <input id='description'  placeholder='tell me about the card...' onChange={this.handleChange} value={this.state.value} type="text"/>
-        <input id='whoFoundCard' placeholder='type your name...' onChange={this.handleChange} value={this.state.value} type="text" />
-    {/* insert x 4 radio buttons to select: heart, club, spade, diamond and label */}
-    {/* insert x 14  radio buttons to select: Ace====>  2 and label */ }
-    {/* insert  data selector widget or thing to bring up a load of dates from which you can click the one you want*/}
-    {/* flith slider slide from 0 - 100 level of flith */}
-    {/* UPLOAD AN IMAGE */}
-    
+  render() {
+    return (
+        <div className={css.mainDiv}>
+        <h1>Found a card? add the information here</h1>
+          <input
+            id="description of card"
+            placeholder="give a brief description of how you found the card..."
+            onChange={this.addingInfoHandler}
+            type="text"
+            value={this.state.value}
+          />
+          <button onClick={this.addingInfoHandler}>Submit</button>
 
-            </form>
-        </div>
+          <input
+            id="whoFoundCard"
+            placeholder="type your name..."
+            onChange={this.addingInfoHandler}
+            value={this.state.value}
+            type="text"
+          />
+          {/* insert x 4 radio buttons to select: heart, club, spade, diamond and label */}
+          {/* insert x 14  radio buttons to select: Ace====>  2 and label */}
+          {/* insert  data selector widget or thing to bring up a load of dates from which you can click the one you want*/}
+          {/* flith slider slide from 0 - 100 level of flith */}
+          {/* UPLOAD AN IMAGE */}
+      </div>
     );
+  }
 }
-}
+
+export default Cards;
