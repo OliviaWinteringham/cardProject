@@ -2,6 +2,7 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const cors = require("cors");
 
 // const authenticateRouter = require('./routes/authenticate');
 var indexRouter = require("./routes/index");
@@ -19,6 +20,14 @@ mongoose.connect(
 const app = express();
 
 
+// This middleware is to solve the CORS issues
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
