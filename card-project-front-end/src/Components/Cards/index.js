@@ -1,6 +1,6 @@
 import React from "react";
-import css from "../Cards/cards.module.css";
-import RadioButtons from '../RadioButtons'
+import css from "./cards.module.css";
+// import RadioButtons from '../RadioButtons'
 
 
 class Cards extends React.Component {
@@ -26,15 +26,60 @@ class Cards extends React.Component {
     return (
     
         <div className={css.mainDiv}>
-        <h1>Found a card? add the information here</h1>
+        <h2>Found a card? add the information here</h2>
           <div className={css.inputContainer}>
+          
+          <p>What is the suit?</p>
           <input
-            id="description of card"
-            placeholder="give a brief description of how you found the card..."
-            onChange={this.addingInfoHandler}
+            id="suitInput"
+            placeholder="type the suit"
             type="text"
+            onChange={this.addingInfoHandler}
             value={this.state.value}
           />
+           <p>What is the card number?</p>
+          <input 
+            id="numberInput"
+            placeholder="type the card number"
+            type="text">
+          </input>
+
+          <p>What were you doing when you found it?</p>
+          <input 
+            id="descriptionInput"
+            placeholder="give a description"
+            type="text">
+          </input>
+
+          <p>Where were you in the world?</p>
+          <input 
+            id="locationInput"
+            placeholder="give us the location/ postcode"
+            type="text">
+          </input>
+
+
+          <p>What was the date?</p>
+          <input 
+            id="dateInput"
+            placeholder="type the date you found it"
+            type="text">
+          </input>
+
+          <p>How dirty is it?</p>
+          <input 
+            id="dirtyInput"
+            placeholder="how dirty?"
+            type="text">
+          </input>
+
+          <p>Where were you in the world?</p>
+          <input 
+            id="imageInput"
+            placeholder="upload an image"
+            type="url">
+            
+          </input>
         
 
           

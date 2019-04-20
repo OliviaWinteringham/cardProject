@@ -8,11 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <>
-            <p > I'm making a new project in React </p>
-            <p>
-              and I've just set up the basic template to start my database using
-              Express{" "}
-            </p>
+            <h1>Cards of the World</h1>
+            <p>A project by Olivia created in React</p>
             <Cards />
           </>
         </header>
