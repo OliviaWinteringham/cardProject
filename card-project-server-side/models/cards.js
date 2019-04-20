@@ -1,16 +1,13 @@
-const mongoose = require("mongoose")
-const cardSchema = new mongoose.Schema
-({
-
+const mongoose = require("mongoose");
+const cardsSchema = new mongoose.Schema(
+    {
     suit: {type: String, required: true, unique: true},
-    value: String,
+    number: Number,
     description: String,
-    locationDiscovered: {type: String, required: true},
-    dateDiscovered: Date,
-    whoFoundIt: String,
-    filth: String,
+    location: {type: String, required: true},
+    date: Date,
+    dirty: String,
     imageUrl: String
-
 });
 
-module.exports = mongoose.model("card", cardSchema);
+module.exports = mongoose.model("Card", cardsSchema);

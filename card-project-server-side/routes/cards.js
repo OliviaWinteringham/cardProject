@@ -2,11 +2,6 @@ var express = require("express");
 var router = express.Router();
 var Card = require("../models/cards");
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   const cards = cards.find({})
-//   res.json({ payload: cards });
-// });
 router.get("/", async function(req, res, next) {
   try {
     const cards = await Card.find();
@@ -16,16 +11,17 @@ router.get("/", async function(req, res, next) {
   }
 });
 
-router.post("/", async function(req, res, next) {
-  const card = new Card(req.body);
-  await card.save();
-  res.json({ payload: card });
+
+router.post("/", async (req, res, next) => {
+  try {
+    console.log(req.body);
+    const cards = new Card(req.body);
+    await cards.save();
+    res.status(201).json({ payload: { cards } });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "error creating card", error: err });
+  }
 });
 
 module.exports = router;
-
-/// get all the players
-// router.get("/", (req, res, next) => {
-//   const players = await player.find({});
-//   res.json({ payload: players });
-// });
