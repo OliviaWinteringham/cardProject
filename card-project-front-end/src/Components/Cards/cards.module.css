@@ -1,6 +1,11 @@
 .inputContainer {
+  background-color:white;
   width: 20vw;
   border: 2px solid black;
+}
+
+.header{
+  background-color: magenta;
 }
 
 .mainDiv{

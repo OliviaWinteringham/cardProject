@@ -1,8 +1,9 @@
 import React from "react";
 import css from "./cards.module.css";
+import Emoji from '../Emoji'
 // import RadioButtons from '../RadioButtons'
 
-const API = process.env.REACT_APP_API_URL
+const API = "http://localhost:5000"
 
 class Cards extends React.Component {
   constructor(props) {
@@ -44,16 +45,6 @@ class Cards extends React.Component {
     this.setState({[e.target.name]: e.target.value})
   };
 
-  // addingInfoHandler = (eventOfTyping) => {
-  //   const { value } = eventOfTyping.target;
-  //   console.log(value);
-  //   this.setState(() => ({
-  //     suit: value,
-  //     number: value,
-  //   }));
-  // };
-
-
 
 
   render() {
@@ -69,10 +60,18 @@ class Cards extends React.Component {
     return (
       <>
         <div className={css.mainDiv}>
+       <div className={css.header} >
         <h1>52 cards from around the world</h1>
         <h2>Found a card? add the information here</h2>
+        </div> 
           <form onSubmit={this.handleSubmit}>
           <div className={css.inputContainer}>
+          <h1> <Emoji symbol="🌍" label="globe showing Europe-Africa"/>
+        <Emoji symbol="♠" label="spade suit"/>
+        <Emoji symbol="♥" label="heart suit"/>
+        <Emoji symbol="♦" label="diamond suit"/>
+        <Emoji symbol="♣" label="club suit"/>
+        <Emoji symbol="🌍" label="globe showing Europe-Africa"/> </h1>
           <p>What is the suit?</p>
           <input
             id="suitInput"

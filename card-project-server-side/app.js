@@ -4,10 +4,8 @@ const path = require('path');
 const logger = require('morgan');
 const cors = require("cors");
 
-// const authenticateRouter = require('./routes/authenticate');
 var indexRouter = require("./routes/index");
 const cardsRouter = require('./routes/cards');
-// const usersRouter = require('./routes/users');
 
 const mongoose = require("mongoose");
 
@@ -32,14 +30,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// insert authenticate req,res /// TODO: without copying coding.
-
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use("/authenticate",authenticateRouter);
+
 app.use("/", indexRouter);
 app.use("/cards", cardsRouter);
-// app.use("/users", usersRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,8 +50,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.send("server not working")
-  // res.render('uhhhh ?? server not werking!');
+  res.send("server, server, server")
 });
 
 module.exports = app;

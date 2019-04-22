@@ -1,3 +1,6 @@
+html{
+    background-image: url("https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif")
+}
 .header{
     display:flex;
     justify-content: center;

@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const cardsSchema = new mongoose.Schema(
     {
-    suit: {type: String, required: true, unique: true},
+    suit: String,
     number: Number,
     description: String,
-    location: {type: String, required: true},
+    location: String,
     date: Date,
     dirty: String,
     imageUrl: String
