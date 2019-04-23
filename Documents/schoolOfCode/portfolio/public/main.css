@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'olivia';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--backgroundColor);
+    color: var(--secondaryColor)
+  }
+  
+  
+  @font-face {
+    font-family: 'olivia';
+    src: url('olivia-webfont.woff2') format('woff2'),
+         url('olivia-regular-webfont.woff') format('woff'),
+         url('olivia-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

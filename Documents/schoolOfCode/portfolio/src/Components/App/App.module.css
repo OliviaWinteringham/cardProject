@@ -1,0 +1,108 @@
+.button{
+  font-family: 'olivia';
+  background-color: black;
+  font-size: 200%;
+  color: white;
+  width: 20vw;
+  height: 19vh;
+  margin: 10px;
+  outline: none;
+  flex-direction: row;
+  justify-content:space-around;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+}
+
+#buttonHome:hover {
+  background-color: orangered;
+  font-family: 'Dancing Script', cursive; 
+  font-size: 40px;
+}
+
+#buttonSkills:hover {
+  background-color: darkblue;
+  font-family: 'Bowlby One SC', cursive;
+
+}
+
+#buttonProjects:hover {
+  background-color: limegreen;
+  /* animation: buttonsSpin infinite 11s cubic-bezier(0.215, 0.610, 0.355, 1);
+  height: 40vmin;
+  pointer-events: none; */
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 80px;
+}
+
+#buttonContact:hover {
+  background-image: url("https://media.licdn.com/dms/image/C5603AQFikSQ4fiNd3g/profile-displayphoto-shrink_100_100/0?e=1560384000&v=beta&t=74plxSqQo6O6dl96w6RV1oU_-pqN6kP9Ym6PHqjktuk");
+
+}
+
+.textContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+  padding-top: 5%;
+ 
+}
+
+.oliviaHeader{
+  font-family: "olivia";
+  font-size: 68px;
+}
+
+#oliviaHeaderHover:hover{
+  font-family: 'Roboto Slab', serif;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  background-color: red;
+  border-radius: 20% 50% 30% 40%;
+  border: 15px dashed;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.oliviaDescription{
+  font-family: "olivia";
+  font-size: 38px;
+}
+
+.intro{
+  font-family: 'Roboto Slab', serif;
+  /* font-family: 'Dancing Script', cursive; */
+  font-size: 20px;
+}
+
+/* @keyframes buttonSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+.languages{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+}
