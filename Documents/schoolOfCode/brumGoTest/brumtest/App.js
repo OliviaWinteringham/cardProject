@@ -8,113 +8,52 @@
 
 
 import React, {Component} from 'react';
-import {AppRegistry, Text, View, Image, TextInput, Button} from 'react-native';
+import {Text, View, TextInput, Button} from 'react-native';
 
+const API = "http://localhost:5000"
 
-class Location extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      id: '',
-      locationName: '',
-      category: '',
-      location:'',
-      trivia: '',
+export default class Trivia extends Component{
+    constructor(props){
+      super(props);
+      this.state={
+        id: '',
+        locationName: '',
+        category: '',
+        trivia: '',
       }
-  }
-  render() {
+    }
+
+    
+      fetch ("http://localhost:5000/locations", {
+        method: "POST",
+        headers: { 
+          Accept: "application/json", 
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify({
+          id: this.state.id,
+          locationName: this.state.locationName,
+          category: this.state.category,
+          trivia: this.state.trivia,
+        }),
+      });
+
+
+    // onChange = e => {
+    //   this.setState({[e.target.name]: e.target.value})
+    // };
+
+    render() {
     return (
-      <View style={{alignItems: 'center'}}>
-        <Text>Hello {this.props.name}!</Text>
+      <View style={{padding: 20}}>
+        <TextInput
+          style={{height: 40, margin: 50}}
+          placeholder="enter the location"
+          onChangeText={(locationName) => this.setState({locationName})}
+        />
+        <Text style={{paddingTop: 50, fontSize: 42}}>
+        </Text>
       </View>
     );
   }
 }
-
-
-
-export default class App extends Component{
-  render(){
-    let pic = {
-      uri: 'https://media.giphy.com/media/C8KAPsRKhmIAYXymrd/giphy.gif'
-    };
-    let newpic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
-    return(
-      <View style={{flex:1, justifyContent: 'center', alignItems: "center"}}>
-        <Text>This is a test for uploading info to mongodb location</Text>
-        <Image source={pic} style={{width: 193, height: 110}}/>
-        <Image source={newpic} style={{width: 200, height: 100, margin: 12}}/>
-        <TextInput/>
-      </View> 
-    )
-  }
-}
-
-
-
-// import React, {Component} from 'react';
-// import { Button } from 'react-native';
-// import {Platform, StyleSheet, Text, View} from 'react-native';
-
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-//   android:
-//     'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
-// });
-
-// type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}> Olivia </Text>
-//         <Text style={styles.welcome}>Welcome to React Native!</Text>
-//         <Text style={styles.instructions}>To get started, edit App.js</Text>
-//         <Text style={styles.instructions}>{instructions}</Text>
-//         <Button
-//   title="This button does nothing"
-//   color="#00ffff"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-// <Button
-//   title="This is a 2nd button"
-//   color="#ff00ff"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-// <Button
-//   title="This is a 3rd button"
-//   color="#ffff00"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-// <Button
-//   title="This is a red button"
-//   color="#ff0000"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#0000ff',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//     color: "#f5f5f5"
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#808080',
-//     marginBottom: 5,
-//   },
-// });
